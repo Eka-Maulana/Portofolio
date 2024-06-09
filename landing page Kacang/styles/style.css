@@ -1,0 +1,383 @@
+/* html{
+    scroll-behavior: ;
+} */
+
+@font-face {
+    font-family: "Poetsen One";
+    src:
+        url(/font/PoetsenOne-Regular.ttf) format("TrueType");
+}
+
+@font-face {
+    font-family: "Concert One";
+    src: url(/font/ConcertOne-Regular.ttf) format("TrueType");
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #008170;
+    overflow-x: hidden;
+}
+
+
+/* navigasi utama */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0F0F0F;
+    border-radius: 0 0 20px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    color: rgba(255, 255, 255);
+    font-size: 20px;
+    font-weight: 600;
+    color: #BF9A57;
+}
+
+/* navigasi mobile */
+.side-nav {
+    display: none;
+}
+
+.container-side {
+    position: fixed;
+    right: 5px;
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 999;
+}
+
+.list-nav ul {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+}
+
+.list-nav li {
+    list-style: none;
+    padding: 7px;
+    margin-right: 10px;
+    background-color: #0F0F0F;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.list-nav ul li.show {
+    opacity: 1;
+}
+
+.list-nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #BF9A57;
+    font-weight: 600;
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 5px;
+    position: relative;
+}
+
+.burger input {
+    top: -5px;
+    left: -5px;
+    position: absolute;
+    width: 38px;
+    height: 35px;
+    opacity: 0;
+}
+
+.burger span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+.burger span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.burger span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.burger input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(2px, -4px);
+}
+
+.burger input:checked~span:nth-child(3) {
+    transform: scale(0);
+}
+
+.burger input:checked~span:nth-child(4) {
+    transform: rotate(-45deg) translate(2px, 4px);
+}
+
+/* main */
+main {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* home */
+#home {
+    box-sizing: border-box;
+    padding-top: 30px;
+    background-color: #232D3F;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#home .judul {
+    flex-grow: 0;
+    flex-shrink: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    font-size: 20px;
+    background: #CCB487;
+    background: linear-gradient(to right, #CCB487 0%, #CDAB6F 35%, #BF9A57 70%, #BF9A57 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.judul h1 {
+    font-size: 4rem;
+}
+
+#home .cover-awal {
+    flex-shrink: 1;
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: end;
+}
+
+#home .cover-awal img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* manfaat */
+#manfaat {
+    background-color: #005B41;
+}
+
+#manfaat,
+#fakta,
+#galeri {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+#manfaat h2,
+#fakta h2,
+#galeri h2 {
+    padding-left: 30px;
+    font-size: 1.9em;
+    font-family: "Concert One", sans-serif;
+    background: #CCB487;
+    background: linear-gradient(to right, #CCB487 0%, #CDAB6F 35%, #BF9A57 70%, #BF9A57 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#manfaat .cards {
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+#manfaat .cards .card {
+    width: 200px;
+    background-color: #008170;
+    border-radius: 30px;
+    text-align: center;
+    padding: 10px;
+    flex: auto;
+}
+
+.card p span {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #CCB487;
+}
+
+#manfaat .cards .card>span {
+    font-weight: 800;
+    font-size: 1.8rem;
+    padding: 2px 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+#manfaat .cards .card p {
+    font-weight: 500;
+}
+
+/* fakta */
+#fakta {
+    box-sizing: border-box;
+    height: auto;
+    background-color: #232D3F;
+}
+
+#fakta .cover-kacang {
+    width: 600px;
+}
+
+.cover-kacang a {
+    color: #fff;
+}
+
+#fakta .cover-kacang img {
+    height: 90%;
+    width: 100%;
+    border-radius: 0 20px 20px 0;
+    object-fit: cover;
+}
+
+.container-fakta {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.container-fakta span {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #CCB487;
+}
+
+.container-fakta ul li {
+    margin: 15px 0;
+}
+
+/* galeri */
+#galeri {
+    background-color: #005B41;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 4;
+    gap: 20px;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+section div {
+    flex: 1;
+    text-align: center;
+}
+
+#galeri a {
+    color: #fff;
+}
+
+#galeri img {
+    object-fit: cover;
+    object-position: center;
+    width: 250px;
+    height: 200px;
+    border-radius: 0 40px;
+    transition: all .5s ease-in-out;
+}
+
+#galeri img:hover,
+.cover-kacang:hover {
+    cursor: pointer;
+    filter: grayscale(44%) saturate(224%);
+    -webkit-filter: grayscale(44%) saturate(224%);
+    -moz-filter: grayscale(44%) saturate(224%);
+}
+
+/* footer */
+footer {
+    display: flex;
+    padding: 25px 0;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    background-color: #0F0F0F;
+}
+
+footer span {
+    padding-left: 35px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    cursor: pointer;
+}
+
+footer ul svg {
+    fill: #fff;
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .side-nav {
+        display: block;
+    }
+
+    #galeri img {
+        width: 150px;
+        ;
+    }
+}
